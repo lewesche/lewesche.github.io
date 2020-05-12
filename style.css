@@ -12,6 +12,7 @@ h1, h3{
 
 .info {
 	float:right;
+	margin:0;
 }
 
 button {
