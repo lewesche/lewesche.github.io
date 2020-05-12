@@ -1,9 +1,17 @@
 .numInput {
+	background:#d5d5d5;
+	border-width:1px;
+	border-color:black;
 	width: 3em;
+	padding-left:2px;
 }
 
 .colorInput {
+	background:#d5d5d5;
+	border-width:1px;
+	border-color:black;
 	width: 9em;
+	padding-left:2px;
 }
 
 h1, h3{
@@ -13,6 +21,18 @@ h1, h3{
 .info {
 	float:right;
 	margin:0;
+}
+
+a:link {
+  color: #ff3c00;
+}
+
+a:visited {
+  color: #ff3c00;
+}
+
+a:hover {
+  color: #a801b6;
 }
 
 .hints {
@@ -27,6 +47,10 @@ button {
 	font-family: "Courier";
 	display:block;
 	width:10em;
+	margin:auto;
+	background:#d5d5d5;
+	border-width:1px;
+	border-color:black;
 }
 
 label {
@@ -43,8 +67,12 @@ body {
 	font-family: "Courier";
 }
 
+.center {
+	text-align:center;
+}
+
 .col {
-  float: left;
-  width: 16.6%;
+	float: left;
+	width: 16.6%;
 }
 

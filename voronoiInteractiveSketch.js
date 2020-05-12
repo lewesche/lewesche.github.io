@@ -19,10 +19,10 @@ let triangleColor;
 let circleColor;
 
 window.addEventListener('keydown', (event) => {
-	if(event.key =="?") {
+	if(event.key =="M") {
 		$("#menu").toggle();
 	}
-	if(event.key =="!") {
+	if(event.key =="F") {
 		var elem = document.documentElement;
   		if (elem.requestFullscreen) {
 			elem.requestFullscreen();
@@ -42,13 +42,31 @@ window.addEventListener('keydown', (event) => {
 		vmax--;
 		$("#vmax").val(vmax);
 	}
-	if(event.key =="<" || event.key ==",") {
+	if(event.key =="R") {
+		newPts();
+	}
+	if(event.key =="N") {
 		newV();
 	}
-	if(event.key ==">" || event.key ==".") {
+	if(event.key =="!") {
 		flipV();
 	}
-
+	if(event.key =="P") {
+		$("#drawPts").prop("checked", !$("#drawPts").prop("checked"));
+		drawPts=!drawPts;
+	}
+	if(event.key =="V") {
+		$("#drawCells").prop("checked", !$("#drawCells").prop("checked"));
+		drawCells=!drawCells;
+	}
+	if(event.key =="T") {
+		$("#drawTriangles").prop("checked", !$("#drawTriangles").prop("checked"));
+		drawTriangles=!drawTriangles;
+	}
+	if(event.key =="C") {
+		$("#drawCircles").prop("checked", !$("#drawCircles").prop("checked"));
+		drawCircles=!drawCircles;
+	}
 });
 
 function setup() {

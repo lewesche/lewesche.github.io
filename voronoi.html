@@ -16,15 +16,19 @@
 	<h1>Voronoi</h1><h3> by Leif Wesche</h3>
 	<h3 class="info"><a href="https://en.wikipedia.org/wiki/Voronoi_diagram">hmm whats this</a></h3>
 	<br>
-	<div class="hints">
-		<h3>click to add a point</h3><h3 class="inner">[?] to toggle menus</h3><h3>[!] for fullscreen</h3>
+		<div class="hints">
+		<h3>click to add a point</h3><h3>[R] random pts</h3><h3>[N] new V</h3><h3>[!] flip V</h3><h3>[+] faster</h3><h3 class="inner">[-] slower</h3>
 	</div>
 	<div class="hints">
-		<h3>[+] increase V</h3><h3 class="inner">[-] decrease V</h3><h3>[&lt] new V</h3><h3>[&gt] flip V</h3>
+		<h3>[P] toggle pts</h3><h3 class="inner">[V] toggle voronoi cells</h3><h3>[T] toggle triangles</h3><h3>[C] toggle circles</h3>
 	</div>
-
+	<div class="hints">
+		<h3 class="inner">[M] to toggle menus</h3><h3>[F] for fullscreen</h3><h3>[esc] to return</h3>
+	</div>
+	<br>
+	<div class="center">
 	<div class="col">
-		<button id="newPts" onClick="newPts()">New Points</button>
+		<button id="newPts" onClick="newPts()">Random Points</button>
 		<label>Num Pts:<input type="number" id="numPts" min="0" value="20" class="numInput" onchange="styleChange()"></label>
 		<label><input checked type="checkbox" id="autoGen" onchange="styleChange()">Auto Generate</label>
 	</div>
@@ -47,12 +51,13 @@
 
 	<div class="col">
 		<label><input type="checkbox" id="drawTriangles" onchange="styleChange()">Draw Triangle</label>
-		<label>Triangle Color:<br><input type="text" id="triangleColor" value="#A801B6" class="colorInput" onKeyUp="styleChange()"><label>
+		<label>Triangle Color:<br><input type="text" id="triangleColor" value="#a801b6" class="colorInput" onKeyUp="styleChange()"><label>
 	</div>
 
 	<div class="col">
 		<label><input type="checkbox" id="drawCircles" onchange="styleChange()">Draw Circles</label>
 		<label>Circle Color:<br><input type="text" id="circleColor" value="#666" class="colorInput" onKeyUp="styleChange()"><label>
+	</div>
 	</div>
 	</div>	
 </body>
