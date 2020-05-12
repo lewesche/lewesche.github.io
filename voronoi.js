@@ -34,6 +34,12 @@ class Voronoi {
 		}
 	}
 
+	drawCircles(color) {
+		for(let i=0; i<this.DelaunayTriangles.length; i++) {
+			this.DelaunayTriangles[i].drawCircle(color);
+		}
+	}
+
 	drawVoronoiEdges(color) {
 		for(let i=0; i<this.voronoiEdges.length; i++) {
 			this.voronoiEdges[i].draw(color);

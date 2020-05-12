@@ -4,12 +4,30 @@
 <head>
 	<meta charset="utf-8">
 	<title>Lewesche</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
 	<script src="voronoi.js"></script>
 	<script src="voronoiInteractiveSketch.js"></script>	
 </head>
 
 <body>
+	<h1>voronoi</h1>
+	<button id="newPts" onClick="newPts()">New Random Pts</button>
+	<label>Num Pts:<input type="number" id="numPts" min="0" value="20"></label>
+
+	<label><input checked type="checkbox" id="drawPts" onchange="styleChange()">Draw Pts</label>
+	<label>Pt Color:<input type="text" id="ptColor" value="orange" class="colorInput" onKeyUp="styleChange()"><label>
+
+	<label><input checked type="checkbox" id="drawCells" onchange="styleChange()">Draw Cells</label>
+	<label>Cell Color:<input type="text" id="cellColor" value="rgb(255,100,0)" class="colorInput" onKeyUp="styleChange()"><label>
+
+	<label><input type="checkbox" id="drawTriangles" onchange="styleChange()">Draw Triangles</label>
+	<label>Triangle Color:<input type="text" id="triangleColor" value="#A801B6" class="colorInput" onKeyUp="styleChange()"><label>
+
+	<label><input type="checkbox" id="drawCircles" onchange="styleChange()">Draw Circles</label>
+	<label>Circle Color:<input type="text" id="circleColor" value="#666" class="colorInput" onKeyUp="styleChange()"><label>
+
 </body>
 </html>
 
