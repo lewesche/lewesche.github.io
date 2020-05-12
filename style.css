@@ -15,12 +15,11 @@ h1, h3{
 	margin:0;
 }
 
-#hints {
+.hints {
 	text-align:center;
 }
 
-#hints h3.inner {
-	margin-left:4em;
+.hints h3:not(:last-child) {
 	margin-right:4em;
 }
 

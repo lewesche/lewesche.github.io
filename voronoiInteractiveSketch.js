@@ -34,6 +34,21 @@ window.addEventListener('keydown', (event) => {
 			elem.msRequestFullscreen();
 		}
 	}
+	if(event.key =="+" || event.key =="=") {
+		vmax++;
+		$("#vmax").val(vmax);
+	}
+	if(event.key =="-" || event.key =="_") {
+		vmax--;
+		$("#vmax").val(vmax);
+	}
+	if(event.key =="<" || event.key ==",") {
+		newV();
+	}
+	if(event.key ==">" || event.key ==".") {
+		flipV();
+	}
+
 });
 
 function setup() {
