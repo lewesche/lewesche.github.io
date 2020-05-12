@@ -22,6 +22,18 @@ window.addEventListener('keydown', (event) => {
 	if(event.key =="?") {
 		$("#menu").toggle();
 	}
+	if(event.key =="!") {
+		var elem = document.documentElement;
+  		if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+		} else if (elem.mozRequestFullScreen) { /* Firefox */
+			elem.mozRequestFullScreen();
+		} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+			elem.webkitRequestFullscreen();
+		} else if (elem.msRequestFullscreen) { /* IE/Edge */
+			elem.msRequestFullscreen();
+		}
+	}
 });
 
 function setup() {
@@ -33,6 +45,10 @@ function setup() {
 	voronoi = new Voronoi(pts);
 
 	movePts();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth-25, windowHeight-25);
 }
 
 function movePts() {
