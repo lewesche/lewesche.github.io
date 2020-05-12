@@ -15,6 +15,15 @@ h1, h3{
 	margin:0;
 }
 
+#hints {
+	text-align:center;
+}
+
+#hints h3 {
+	margin-left:3em;
+	margin-right:3em;
+}
+
 button {
 	font-family: "Courier";
 	display:block;
@@ -37,6 +46,6 @@ body {
 
 .col {
   float: left;
-  width: 16%;
+  width: 16.6%;
 }
 

@@ -18,8 +18,14 @@ let cellColor;
 let triangleColor;
 let circleColor;
 
+window.addEventListener('keydown', (event) => {
+	if(event.key =="?") {
+		$("#menu").toggle();
+	}
+});
+
 function setup() {
-	createCanvas(windowWidth-25, windowHeight);
+	createCanvas(windowWidth-25, windowHeight-25);
 	background(0);
 
 	styleChange();
