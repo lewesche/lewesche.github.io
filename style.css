@@ -1,7 +1,41 @@
-#numPts {
+.numInput {
 	width: 3em;
 }
 
 .colorInput {
-	width: 8em;
+	width: 9em;
 }
+
+h1, h3{
+	display:inline;
+}
+
+.info {
+	float:right;
+}
+
+button {
+	font-family: "Courier";
+	display:block;
+	width:10em;
+}
+
+label {
+	display:block;
+}
+
+input {
+	font-family: "Courier";
+}
+
+body {
+	background-color: black;
+	color: #d5d5d5;
+	font-family: "Courier";
+}
+
+.col {
+  float: left;
+  width: 16%;
+}
+

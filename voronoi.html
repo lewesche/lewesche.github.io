@@ -12,21 +12,41 @@
 </head>
 
 <body>
-	<h1>voronoi</h1>
-	<button id="newPts" onClick="newPts()">New Random Pts</button>
-	<label>Num Pts:<input type="number" id="numPts" min="0" value="20"></label>
+	<h1>Voronoi</h1><h3> by Leif Wesche</h3>
+	<h3 class="info"><a href="https://en.wikipedia.org/wiki/Voronoi_diagram">hmm whats this</a></h3>
+	<br>
 
-	<label><input checked type="checkbox" id="drawPts" onchange="styleChange()">Draw Pts</label>
-	<label>Pt Color:<input type="text" id="ptColor" value="orange" class="colorInput" onKeyUp="styleChange()"><label>
+	<div class="col">
+		<button id="newPts" onClick="newPts()">New Random Pts</button>
+		<label>Num Pts:<input type="number" id="numPts" min="0" value="20" class="numInput" onchange="styleChange()"></label>
+		<label><input checked type="checkbox" id="autoGen" onchange="styleChange()">Auto Generate Pts</label>
+	</div>
 
-	<label><input checked type="checkbox" id="drawCells" onchange="styleChange()">Draw Cells</label>
-	<label>Cell Color:<input type="text" id="cellColor" value="rgb(255,100,0)" class="colorInput" onKeyUp="styleChange()"><label>
+	<div class="col">
+		<button id="vnew" onClick="newV()">New V</button>
+		<button id="vflip" onClick="flipV()">Flip V</button>
+		<label>Max V:<input type="number" id="vmax" value="10" class="numInput" onchange="styleChange()"></label>
+	</div>
+	
+	<div class="col">
+		<label><input checked type="checkbox" id="drawPts" onchange="styleChange()">Draw Pts</label>
+		<label>Pt Color:<input type="text" id="ptColor" value="orange" class="colorInput" onKeyUp="styleChange()"><label>
+	</div>
 
-	<label><input type="checkbox" id="drawTriangles" onchange="styleChange()">Draw Triangles</label>
-	<label>Triangle Color:<input type="text" id="triangleColor" value="#A801B6" class="colorInput" onKeyUp="styleChange()"><label>
+	<div class="col">
+		<label><input checked type="checkbox" id="drawCells" onchange="styleChange()">Draw Cells</label>
+		<label>Cell Color:<input type="text" id="cellColor" value="rgb(255,60,0)" class="colorInput" onKeyUp="styleChange()"><label>
+	</div>
 
-	<label><input type="checkbox" id="drawCircles" onchange="styleChange()">Draw Circles</label>
-	<label>Circle Color:<input type="text" id="circleColor" value="#666" class="colorInput" onKeyUp="styleChange()"><label>
+	<div class="col">
+		<label><input type="checkbox" id="drawTriangles" onchange="styleChange()">Draw Triangles</label>
+		<label>Triangle Color:<input type="text" id="triangleColor" value="#A801B6" class="colorInput" onKeyUp="styleChange()"><label>
+	</div>
+
+	<div class="col">
+		<label><input type="checkbox" id="drawCircles" onchange="styleChange()">Draw Circles</label>
+		<label>Circle Color:<input type="text" id="circleColor" value="#666" class="colorInput" onKeyUp="styleChange()"><label>
+	</div>
 
 </body>
 </html>

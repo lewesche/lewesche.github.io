@@ -1,5 +1,4 @@
 const buf=0.5;
-const vmax=5;
 const step=0.1;
 const pts = [];
 const v = [];
@@ -7,6 +6,8 @@ const v = [];
 let voronoi;
 
 let numPts;
+let vmax;
+let autoGen=false;
 let drawPts=false;
 let drawCells=false;
 let drawTriangles=false;
@@ -18,7 +19,7 @@ let triangleColor;
 let circleColor;
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	createCanvas(windowWidth-25, windowHeight);
 	background(0);
 
 	styleChange();
@@ -30,12 +31,15 @@ function setup() {
 
 function movePts() {
 	for(let i=0; i<pts.length; i++) {
-		pts[i].x += step*v[i].x;
-		pts[i].y += step*v[i].y;
+		pts[i].x += step*(v[i].x)*vmax;
+		pts[i].y += step*(v[i].y)*vmax;
 		if(outOfBounds(pts[i])) {
 			pts.splice(i, 1);
 			v.splice(i, 1);
 			i--;
+		}
+		while(autoGen && pts.length<numPts) {
+			newPt();
 		}
 	}
 	voronoi.updatePts(pts);
@@ -59,24 +63,26 @@ function outOfBounds(p) {
 
 function mouseClicked() {
 	pts.push(new pt(mouseX, mouseY));
-	let vx = random(2*vmax)-vmax;
-	let vy = random(2*vmax)-vmax;
+	let vx = random(1)-0.5;
+	let vy = random(1)-0.5;
 	v.push({x:vx, y:vy});
 	if(pts.length ==1) { console.log("starting"); movePts(); }
 }
 
 function getNewPts() {
-	numPts = $('#numPts')[0].valueAsNumber;
 	pts.length=0;
 	for(let i=0; i<numPts; i++) {
-		let x = random(width)*buf + width*buf/2;
-		let y = random(height)*buf + height*buf/2;
-		pts.push(new pt(x, y));
-
-		let vx = random(2*vmax)-vmax;
-		let vy = random(2*vmax)-vmax;
-		v.push({x:vx, y:vy});
+		newPt();
 	}
+}
+
+function newPt() {
+	let x = random(width)*buf + width*buf/2;
+	let y = random(height)*buf + height*buf/2;
+	pts.push(new pt(x, y));
+	let vx = random(1)-0.5;
+	let vy = random(1)-0.5;
+	v.push({x:vx, y:vy});
 }
 
 function newPts() {
@@ -84,7 +90,27 @@ function newPts() {
 	movePts();
 }
 
+function newV() {
+	v.length=0;
+	for(let i=0; i<pts.length; i++) {
+		let vx = random(1)-0.5;
+		let vy = random(1)-0.5;
+		v.push({x:vx, y:vy});
+		console.log(v[i]);
+	}
+}
+
+function flipV() {
+	for(let i=0; i<v.length; i++) {
+		v[i].x *=-1;
+		v[i].y *=-1;
+	}
+}
+
 function styleChange() {
+	numPts = $('#numPts')[0].valueAsNumber;
+	vmax = $("#vmax")[0].valueAsNumber;
+	autoGen = $("#autoGen")[0].checked;
 	drawPts = $("#drawPts")[0].checked;
 	drawCells = $("#drawCells")[0].checked;
 	drawTriangles = $("#drawTriangles")[0].checked;
