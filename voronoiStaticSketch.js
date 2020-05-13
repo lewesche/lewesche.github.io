@@ -16,5 +16,9 @@ function setup() {
 	s.drawPts('orange');
 	//s.drawDelaunayTriangles('blue');
 	s.drawVoronoiEdges('orange');
+
+	$.getJSON("lewesche.json", function(json) {
+    	console.log(json); // this will show the info it in firebug console
+	});
 }
 
