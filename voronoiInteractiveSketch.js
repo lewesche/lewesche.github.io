@@ -70,7 +70,8 @@ window.addEventListener('keydown', (event) => {
 });
 
 function setup() {
-	createCanvas(windowWidth-25, windowHeight-25);
+	let backgroundCanvas = createCanvas(windowWidth, windowHeight-5);
+	backgroundCanvas.parent("backgroundCanvas");
 	background(0);
 
 	styleChange();

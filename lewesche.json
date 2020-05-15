@@ -1,4 +1,6 @@
 {
-  "Name":"Denu",
-  "Contact":12345678
+	"contact":{
+		"name":"Leif Wesche",
+		"contact":"Lewesche@gmail.com"
+	}
 }

@@ -12,7 +12,9 @@
 </head>
 
 <body>
-	<div id="menu">
+	<div id="backgroundCanvas" class="background"></div>
+
+	<div id="menu" class="blur">
 	<h1>Voronoi</h1><h3> by Leif Wesche</h3>
 	<h3 class="info"><a href="https://en.wikipedia.org/wiki/Voronoi_diagram">hmm whats this</a></h3>
 	<br>
@@ -30,7 +32,7 @@
 	<div class="col">
 		<button id="newPts" onClick="newPts()">Random Points</button>
 		<label>Num Pts:<input type="number" id="numPts" min="0" value="20" class="numInput" onchange="styleChange()"></label>
-		<label><input checked type="checkbox" id="autoGen" onchange="styleChange()">Auto Generate</label>
+		<label><input checked type="checkbox" class="myCheckbox" id="autoGen" onchange="styleChange()">Auto Generate</label>
 	</div>
 
 	<div class="col">
@@ -40,24 +42,25 @@
 	</div>
 	
 	<div class="col">
-		<label><input checked type="checkbox" id="drawPts" onchange="styleChange()">Draw Pts</label>
+		<label><input checked type="checkbox" class="myCheckbox" id="drawPts" onchange="styleChange()">Draw Pts</label>
 		<label>Pt Color:<br><input type="text" id="ptColor" value="orange" class="colorInput" onKeyUp="styleChange()"><label>
 	</div>
 
 	<div class="col">
-		<label><input checked type="checkbox" id="drawCells" onchange="styleChange()">Draw Cells</label>
+		<label><input checked type="checkbox" class="myCheckbox" id="drawCells" onchange="styleChange()">Draw Cells</label>
 		<label>Cell Color:<br><input type="text" id="cellColor" value="rgb(255,60,0)" class="colorInput" onKeyUp="styleChange()"><label>
 	</div>
 
 	<div class="col">
-		<label><input type="checkbox" id="drawTriangles" onchange="styleChange()">Draw Triangle</label>
+		<label><input type="checkbox" class="myCheckbox" id="drawTriangles" onchange="styleChange()">Draw Triangle</label>
 		<label>Triangle Color:<br><input type="text" id="triangleColor" value="#a801b6" class="colorInput" onKeyUp="styleChange()"><label>
 	</div>
 
 	<div class="col">
-		<label><input type="checkbox" id="drawCircles" onchange="styleChange()">Draw Circles</label>
+		<label><input type="checkbox" class="myCheckbox" id="drawCircles" onchange="styleChange()">Draw Circles</label>
 		<label>Circle Color:<br><input type="text" id="circleColor" value="#666" class="colorInput" onKeyUp="styleChange()"><label>
 	</div>
+	<div class="floatDummy"></div>
 	</div>
 	</div>	
 </body>
