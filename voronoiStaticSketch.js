@@ -30,18 +30,18 @@ let resume = {
 		{"company":"NASA MSFC", "title":"Intern", "date":"Summer 2017", "summary":[]}
 	],
 	"projects":[
-		{"title":"News App", "summary":[
+		{"title":"News App", "summary":"Web Technologies class projects", "details":[
 			{"text":"Web Development Class Project. Built a live news Web App"},
 			{"text":"html/css/js, python backend, AWS hosted", "links":[
 				{"text":"Link", "url":"http://homework6-env.eba-aqhnumkd.us-east-1.elasticbeanstalk.com/index.html"},
-				{"text":"Video", "url":"https://www.youtube.com/"}]},
+				{"text":"Video", "url":"https://www.youtube.com/watch?v=zYx_7yxwQbg"}]},
 			{"text":"React frontend, node.js backend, GCP hosted", "links":[
 				{"text":"Link", "url":"https://argon-retina-271020.wl.r.appspot.com/"},
-				{"text":"Video", "url":"https://www.youtube.com/"}]},
+				{"text":"Video", "url":"https://www.youtube.com/watch?v=adw-17RX2mw"}]},
 			{"text":"Android App (Java), node.js backend, GCP hosted", "links":[
-				{"text":"Video", "url":"https://www.youtube.com/"}]}
+				{"text":"Video", "url":"https://www.youtube.com/watch?v=td6YLY7J3Xc&t=21s"}]}
 		]},
-		{"title":"Weenix", "summary":[
+		{"title":"Weenix", "details":[
 			{"text":"Operating Systems class project with two peers. Semester long project building a single threaded Unix 6th edition based OS (not from scratch)."},
 			{"text":"Started by initializing idle process all the way to running compiled user code."},
 			{"text":"Implemented process and thread control, a FIFO scheduler, kernel level mutex, virtual file system, Unix system calls, and an on demand paged virtual memory sytem.", "links":[
@@ -49,17 +49,17 @@ let resume = {
 		]}
 	],
 	"skills":[
-		{"category":"Programming", "summary":[
+		{"category":"Programming", "details":[
 			{"title":"languages", "text":"fortran"},
 			{"title":"Web Development", "text":"React"},
 			{"title":"Software Development", "text":"gdb, git, GTest"}
 		]},
-		{"category":"Math", "summary":[
-			{"title":"languages", "text":"fortran"},
+		{"category":"Math", "details":[
+			{"title":"languages", "text":"details"},
 			{"title":"Web Development", "text":"React"},
 			{"title":"Software Development", "text":"gdb, git, GTest"}
 		]},
-		{"category":"Engineering", "summary":[
+		{"category":"Engineering", "details":[
 			{"title":"languages", "text":"fortran"},
 			{"title":"Web Development", "text":"React"},
 			{"title":"Software Development", "text":"gdb, git, GTest"}
@@ -82,14 +82,29 @@ function setup() {
 	inner.classList.add("tight");
 	inner.classList.add("blur");
 	inner.append(buildEducation(resume.education));
-	inner.append(document.createElement("br"));
 	inner.append(buildExperience(resume.experience));
+	inner.append(buildProjects(resume.projects));
+	inner.append(buildSkills(resume.skills));
 	outer.append(inner);
 	$("#resume").append(outer);
 
 	let backgroundCanvas = createCanvas(windowWidth-25, max(document.body.scrollHeight, windowHeight));
 	backgroundCanvas.parent("backgroundCanvas");
 	background(0);
+
+	$(".dropDown").click(function(){
+		let curr = this.innerHTML;
+		if(curr[0] == '+') {
+			curr = curr.replace('+', '-');
+		} else if (curr[0] == '-') {
+			curr = curr.replace('-', '+');
+		}
+		this.innerHTML = curr;
+		$(this.nextSibling).animate({
+			height: 'toggle'
+    	});
+	});
+
 
 	getNewPts();
 	voronoi = new Voronoi(pts);
@@ -134,7 +149,7 @@ function movePts() {
 		console.log("stopping");
 		return;
 	}
-	setTimeout(movePts, 0);
+	setTimeout(movePts, 10);
 }
 
 function outOfBounds(p) {
@@ -163,43 +178,105 @@ function buildContact(c) {
 }
 
 function buildEducation(e) {
-	let div = document.createElement("div");
-	let education = document.createElement("h2");
-	education.innerHTML = "Education";
-	education.classList.add("left");
-	div.append(education);
+	let outer = document.createElement("div");
+	let inner = document.createElement("div");
+	let title = document.createElement("h2");
+	title.innerHTML = "- Education";
+	title.classList.add("left", "dropDown");
+	outer.append(title);
 	for(let i=0; i<e.length; i++) {
 		let main = document.createElement("p");
 		main.innerHTML = e[i].degree + " - " + e[i].school + " - " + e[i].location;
 		let sub = document.createElement("p");
 		sub.classList.add("indent");
 		sub.innerHTML = e[i].gpa + " gpa, " + e[i].graduation;
-		div.append(main);
-		div.append(sub);
+		inner.append(main);
+		inner.append(sub);
 	}
-	return div;
-	appendInContainer(div);
+	outer.append(inner);
+	return outer;
 }
 
 function buildExperience(e) {
-	let div = document.createElement("div");
-	let education = document.createElement("h2");
-	education.innerHTML = "Experience";
-	education.classList.add("left");
-	div.append(education);
+	let outer = document.createElement("div");
+	let inner = document.createElement("div");
+	let title = document.createElement("h2");
+	title.innerHTML = "- Experience";
+	title.classList.add("left" , "dropDown");
+	outer.append(title);
 	for(let i=0; i<e.length; i++) {
 		let main = document.createElement("p");
-		main.innerHTML = e[i].company + " - " + e[i].job + " - " + e[i].date;
-		div.append(main);
+		main.innerHTML = e[i].company + " - " + e[i].title + " - " + e[i].date;
+		inner.append(main);
 		for(let j=0; j<e[i].summary.length; j++) {
 			let sub = document.createElement("p");
 			sub.classList.add("indent");
 			sub.innerHTML = e[i].summary[j];
-			div.append(sub);
+			inner.append(sub);
 		}
 	}
-	return div;
-	appendInContainer(div);
+	outer.append(inner);
+	return outer;
+}
+
+function buildProjects(p) {
+	let outer = document.createElement("div");
+	let inner = document.createElement("div");
+	let title = document.createElement("h2");
+	title.innerHTML = "- Projects";
+	title.classList.add("left", "dropDown");
+	outer.append(title);
+	for(let i=0; i<p.length; i++) {
+		let main = document.createElement("p");
+		main.innerHTML = p[i].title; 
+		if(p[i].summary) {main.innerHTML += " - " + p[i].summary }
+		inner.append(main);
+		for(let j=0; j<p[i].details.length; j++) {
+			let sub = document.createElement("p");
+			sub.classList.add("indent");
+			sub.innerHTML = p[i].details[j].text;
+			inner.append(sub);
+			if(p[i].details[j].links) {
+				let subsub = document.createElement("p");
+				subsub.classList.add("dubIndent");
+				for(let k=0; k<p[i].details[j].links.length; k++) {
+					if(k>0) { subsub.innerHTML += " + " }
+					let a = document.createElement("a");
+					let link = document.createTextNode(p[i].details[j].links[k].text);
+					a.appendChild(link);
+					a.title = p[i].details[j].links[k].text;
+					a.href =  p[i].details[j].links[k].url;
+					subsub.appendChild(a);
+				}
+				inner.append(subsub);
+			}
+		}
+
+	}
+	outer.append(inner);
+	return outer;
+}
+
+function buildSkills(s) {
+	let outer = document.createElement("div");
+	let inner = document.createElement("div");
+	let title = document.createElement("h2");
+	title.innerHTML = "- Skills";
+	title.classList.add("left", "dropDown");
+	outer.append(title);
+	for(let i=0; i<s.length; i++) {
+		let main = document.createElement("p");
+		main.innerHTML = s[i].category;
+		inner.append(main);		
+		for(let j=0; j<s[i].details.length; j++) {
+			let sub = document.createElement("p");
+			sub.classList.add("indent");
+			sub.innerHTML = s[i].details[j].title + " - " + s[i].details[j].text;
+			inner.append(sub);
+		}
+	}
+	outer.append(inner);
+	return outer;
 }
 
 function appendInContainer(inner) {

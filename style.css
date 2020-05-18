@@ -114,6 +114,11 @@ body {
     z-index: -100;
 }
 
+#resume {
+	max-width:85%;
+	margin:auto;
+}
+
 p {
 	font-size: 16px;
 	margin:0;
@@ -124,9 +129,17 @@ p {
 	margin-left:2em;
 }
 
+.dubIndent {
+	margin-left:4em;
+}
+
 .contact {
 	float:center;
 }
 
+.dropDown {
+	color: #ff3c00;
+	cursor:pointer
 
+}
 
