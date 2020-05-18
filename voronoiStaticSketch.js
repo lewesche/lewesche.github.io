@@ -100,9 +100,8 @@ function setup() {
 			curr = curr.replace('-', '+');
 		}
 		this.innerHTML = curr;
-		$(this.nextSibling).animate({
-			height: 'toggle'
-    	});
+		var oldWidth = $(this.nextSibling).width();
+		$(this.nextSibling).slideToggle(200, () => {$(this).width(oldWidth);} );
 	});
 
 
