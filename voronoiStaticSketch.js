@@ -97,7 +97,7 @@ let resumeOld = {
 
 $(document).ready(function() {	
 	console.log("requesting json");
-	$.getJSON("test.json", function(json) {
+	$.getJSON("lewesche.json", function(json) {
 		console.log("returned!");
     	console.log(json);
 		buildPage(json);
