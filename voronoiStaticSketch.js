@@ -97,11 +97,13 @@ let resumeOld = {
 
 function setup() {	
 	//console.log(resume);
-	let resume;
 	$.getJSON("lewesche.json", function(json) {
     	console.log(json); // this will show the info it in firebug console
-		resume=json;
+		buildPage(json);
 	});
+}
+
+function buildPage(resume) {
 	buildContact(resume.contact);	
 
 	let outer = document.createElement("div");
