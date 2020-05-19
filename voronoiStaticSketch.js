@@ -9,7 +9,7 @@ const numPts=20;
 const autoGen=true;
 const cellColor="rgb(255,60,0)";
 
-let resume = {
+let resumeOld = {
 	"contact":{
 		"name":"Leif Wesche",
 		"email":"Lewesche@gmail.com"},
@@ -23,16 +23,28 @@ let resume = {
 	],
 	"experience":[
 		{"company":"USC", "title":"Teaching Assistant", "date":"Fall 2019 - Present", "summary":[
-			"Taught discrete math and algorithms in the fall, teaching data structures and OO design in the spring.",
-			"Running weekly discussion sections, designing C++ assignments, writing grading tools in C++, python, and bash."]},
-		{"company":"SpaceX", "title":"Associate Engineer", "date":"Fall 2018 - Winter 2018", "summary":[]},
-		{"company":"UW Human Ability and Engineering Lab", "title":"Undergrad Researcher", "date":"2017 - 2018", "summary":[]},
-		{"company":"NASA MSFC", "title":"Intern", "date":"Summer 2017", "summary":[]}
+			"Taught discrete math and algorithms (CSCI 107) in the fall of 2019.",
+			"Teaching data structures and object oriented design (CSCI 104) from spring 2020 onward.",
+			"Making content for weekly discussion sections, running a lab, contributing to assignment development, writing grading tools in C++, python, and bash."]},
+		{"company":"SpaceX", "title":"Associate Engineer", "date":"Fall 2018 - Winter 2018", "summary":[
+			"This was SpaceX's new grad program. I worked on the system of actuators that moved the seats with the interior mechanisms team on the dragon 2 crew capsule.",
+			"Design and analysis of various metallic flight parts related to the seat actuators using first principles, CAD, and FEA.",
+			"Built test hardware for actuator enviromental (vibration and thermal) testing, designed to simulate flight loads on the actuators during testing. Design informed by simple modal and thermal analysis.",
+			"Wired up transducer hardware to monitor loads, interfaced hardware with labview, processed data in excell + python."]},
+		{"company":"UW Human Ability and Engineering Lab", "title":"Undergrad Researcher", "date":"2017 - 2018", "summary":[
+			"Ankle foot orthoses (AFOs) are commonly perscribed to cerebral palsy patients to assist with walking.",
+			"Our goal was to build a simple deivce that could quantify various power losses and the overall efficiency of an AFO, then validate our deivce by comparing it to human data. I co-design and maufactured a test AFO and a fake-ankle type device to apply load to the AFO.",
+			"Used our test AFO to attempt to validate the model. Recorded analog test data using an arduino C++ program and processed data with Matlab to attempt to quantify losses and user end power."]},
+		{"company":"NASA MSFC", "title":"Intern", "date":"Summer 2017", "summary":[
+			"I worked with three other interns to study additively manufactured (metal 3d printed) lattice structures. The ability to fabricate these web-like volumes is pretty new, and engineers are just begining to design parts with lattice structural/flow components.",
+			"Lattice structures have proven dificult to analyze with traditional FEA, thus have seen limited use in aerospace design so far.",
+			"Our goal was to quantify the physical (mechanical, thermal, and fluid) properties of additively manufactured lattice structures.",
+			"We designed and conducted thermal and flow tests using Keysight DAQ to record pressure and temperature data. We also built lattice coupons to test in torsion/tension/shear. I used basic python to process our data."]}
 	],
 	"projects":[
-		{"title":"News App", "summary":"Web Technologies class projects", "details":[
-			{"text":"Web Development Class Project. Built a live news Web App"},
-			{"text":"html/css/js, python backend, AWS hosted", "links":[
+		{"title":"News App", "summary":"Web Tech class projects", "details":[
+			{"text":"Web Development Class Project. Built a live news Web App that fetched data from various APIs through a cloud hosted backend."},
+			{"text":"html/css/js, python Flask backend hosten on AWS", "links":[
 				{"text":"Link", "url":"http://homework6-env.eba-aqhnumkd.us-east-1.elasticbeanstalk.com/index.html"},
 				{"text":"Video", "url":"https://www.youtube.com/watch?v=zYx_7yxwQbg"}]},
 			{"text":"React frontend, node.js backend, GCP hosted", "links":[
@@ -41,38 +53,55 @@ let resume = {
 			{"text":"Android App (Java), node.js backend, GCP hosted", "links":[
 				{"text":"Video", "url":"https://www.youtube.com/watch?v=td6YLY7J3Xc&t=21s"}]}
 		]},
-		{"title":"Weenix", "details":[
-			{"text":"Operating Systems class project with two peers. Semester long project building a single threaded Unix 6th edition based OS (not from scratch)."},
-			{"text":"Started by initializing idle process all the way to running compiled user code."},
-			{"text":"Implemented process and thread control, a FIFO scheduler, kernel level mutex, virtual file system, Unix system calls, and an on demand paged virtual memory sytem.", "links":[
-				{"text":"Video", "url":"https://www.youtube.com/"}]}
+		{"title":"Weenix", "summary":"Operating Systems class project", "details":[
+			{"text":"Worked with two peers on a semester long project building a single threaded Unix 6th edition based kernel. Not from scratch, but we did implement signifigant components."},
+			{"text":"The project was broken into three sub projects where we implemented processes and thread control, a virtual file system abstraction layer, and finaly a virtual memory system. Started by initializing the idle process all the way to running compiled user code."},
+			{"text":"Implemented process thread data structures, a FIFO scheduler, kernel level mutex, virtual file system, Unix system calls, shadow objects and an on-demand paged virtual memory sytem."},
+			{"text":"I got lot more of experience writing C, bug hunting with GDB, and learned a bit of assembly too."}
+		]},
+		{"title":"Matrix Music Visualizer", "summary":"Just for fun", "details":[
+			{"text":"I designed, built, and open sourced an Arduino driven music visualizer with parts that come in under $30. Still works too!"},
+			{"text":"An 8x8 array of individually addressed LEDs behind a black acrylic sheet form a 64 pixel “screen”."},
+			{"text":"Designed a custom PCB, 3D printed housing, and C++ software with a few different animations"},
+			{"text":"An integrated analog mic samples audio which is FFT’ed into eight frequency bins spanning audible sound. Bin data is used to animate the screen.", "links":[
+				{"text":"Video", "url":"https://www.youtube.com/watch?v=jVYRgS695s0"}]}
+		]},
+		{"title":"Image Procesing Toolkit", "summary":"Just for fun", "details":[
+			{"text":"A gimp-ish GUI application I built with the QT framework to try implement and layer different image processing algorithms."},
+			{"text":"Implemented resizing/rotation, gaussian blurs, contrast adjustment, edge detection, and even functions to encode/decode subtle steganographic messages in images."}
 		]}
+
 	],
 	"skills":[
 		{"category":"Programming", "details":[
-			{"title":"languages", "text":"fortran"},
-			{"title":"Web Development", "text":"React"},
-			{"title":"Software Development", "text":"gdb, git, GTest"}
+			{"title":"Languages", "text":"From favorite to least favorite: C/C++/Javascript, Python, Bash, Java, Matlab/Simulink."},
+			{"title":"Web Development", "text":"Farmiliar with html/css/md, JQuery, Bootstrap, React, node.js, flask, browser debugging, and AWS/GCP products and interfaces."},
+			{"title":"Software Development", "text":"I've mostly worked on Linux systems and I've used git, gdb, valgrind, and GTest."}
 		]},
 		{"category":"Math", "details":[
-			{"title":"languages", "text":"details"},
-			{"title":"Web Development", "text":"React"},
-			{"title":"Software Development", "text":"gdb, git, GTest"}
+			{"title":"Algorithms", "text":"Farmiliar with graph algorithms, principle component analysis, dynamic/linear programming methods, and using complexity analysis to design code that scales."},
+			{"title":"Simulation", "text":"I've built and <a href=\https://www.youtube.com/watch?v=WoiuuW4Uc2k\">animated</a> fun physics simulations, and done more pracical stuff like design PID systems with bode/nyquist plots and test them with simulink."},
+			{"title":"Signal Processing", "text":"I've processed <a href=\https://www.youtube.com/watch?v=eyxP5UhLbM8\">audio</a> with Fourier analysis algorithms and worked with <a href=\"https://www.youtube.com/watch?v=NIxpzcMw3LA\">real world data collection</a>."}
 		]},
 		{"category":"Engineering", "details":[
-			{"title":"languages", "text":"fortran"},
-			{"title":"Web Development", "text":"React"},
-			{"title":"Software Development", "text":"gdb, git, GTest"}
+			{"title":"Design", "text":"I've used CAD software for mechanical design (Solidworks, NX) and electrical design (KiCad), plus Anysis for FEA."},
+			{"title":"Mechatronics", "text":"I've incorporated microcontrollers/RPis, LiPos power systems, brushed/brushless motors, RC receiver/transmitters, and other hardware into <a href=\"https://github.com/lewesche/RC_Car\">projects</a>."},
+			{"title":"Manufacturing", "text":"Farmiliar with GD&T drafting, metal/plastic 3D printing, THT/SMD soldering, and 2 axis mills/lathes."}
 		]},
+		{"category":"Other", "details":[
+			{"title":"For fun", "text":"playing drums 🥁🥁🥁"}
+		]}
 	]
 }
  
 
 function setup() {	
-	console.log(resume);
-	//$.getJSON("lewesche.json", function(json) {
-    //	console.log(json); // this will show the info it in firebug console
-	//});
+	//console.log(resume);
+	let resume;
+	$.getJSON("lewesche.json", function(json) {
+    	console.log(json); // this will show the info it in firebug console
+		resume=json;
+	});
 	buildContact(resume.contact);	
 
 	let outer = document.createElement("div");
@@ -166,7 +195,7 @@ function buildContact(c) {
 	let div = document.createElement("div");
 	div.classList.add("blur");
 	div.classList.add("tight");
-	let name = document.createElement("h2");
+	let name = document.createElement("h1");
 	name.innerHTML = c.name;
 	let email = document.createElement("h4");
 	email.innerHTML = c.email;
@@ -174,6 +203,13 @@ function buildContact(c) {
 	div.append(name);
 	div.append(email);
 	appendInContainer(div);
+}
+
+function appendInContainer(inner) {
+	let container = document.createElement("div");
+	container.classList.add("center");
+	container.append(inner);
+	$("#resume").append(container);
 }
 
 function buildEducation(e) {
@@ -184,6 +220,7 @@ function buildEducation(e) {
 	title.classList.add("left", "dropDown");
 	outer.append(title);
 	for(let i=0; i<e.length; i++) {
+		if(i!=0) { inner.append(document.createElement("br")); }
 		let main = document.createElement("p");
 		main.innerHTML = e[i].degree + " - " + e[i].school + " - " + e[i].location;
 		let sub = document.createElement("p");
@@ -204,13 +241,14 @@ function buildExperience(e) {
 	title.classList.add("left" , "dropDown");
 	outer.append(title);
 	for(let i=0; i<e.length; i++) {
+		if(i!=0) { inner.append(document.createElement("br")); }
 		let main = document.createElement("p");
 		main.innerHTML = e[i].company + " - " + e[i].title + " - " + e[i].date;
 		inner.append(main);
 		for(let j=0; j<e[i].summary.length; j++) {
 			let sub = document.createElement("p");
 			sub.classList.add("indent");
-			sub.innerHTML = e[i].summary[j];
+			sub.innerHTML = "- " + e[i].summary[j];
 			inner.append(sub);
 		}
 	}
@@ -226,6 +264,7 @@ function buildProjects(p) {
 	title.classList.add("left", "dropDown");
 	outer.append(title);
 	for(let i=0; i<p.length; i++) {
+		if(i!=0) { inner.append(document.createElement("br")); }
 		let main = document.createElement("p");
 		main.innerHTML = p[i].title; 
 		if(p[i].summary) {main.innerHTML += " - " + p[i].summary }
@@ -233,7 +272,7 @@ function buildProjects(p) {
 		for(let j=0; j<p[i].details.length; j++) {
 			let sub = document.createElement("p");
 			sub.classList.add("indent");
-			sub.innerHTML = p[i].details[j].text;
+			sub.innerHTML = "- " + p[i].details[j].text;
 			inner.append(sub);
 			if(p[i].details[j].links) {
 				let subsub = document.createElement("p");
@@ -264,6 +303,7 @@ function buildSkills(s) {
 	title.classList.add("left", "dropDown");
 	outer.append(title);
 	for(let i=0; i<s.length; i++) {
+		if(i!=0) { inner.append(document.createElement("br")); }
 		let main = document.createElement("p");
 		main.innerHTML = s[i].category;
 		inner.append(main);		
@@ -278,12 +318,6 @@ function buildSkills(s) {
 	return outer;
 }
 
-function appendInContainer(inner) {
-	let container = document.createElement("div");
-	container.classList.add("center");
-	container.append(inner);
-	$("#resume").append(container);
-}
 
 
 
