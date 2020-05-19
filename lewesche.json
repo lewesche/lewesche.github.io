@@ -69,8 +69,8 @@
         ]},
         {"category":"Math", "details":[
             {"title":"Algorithms", "text":"Farmiliar with graph algorithms, principle component analysis, dynamic/linear programming methods, and using complexity analysis to design code that scales."},
-            {"title":"Simulation", "text":"I've built and <a href=\https://www.youtube.com/watch?v=WoiuuW4Uc2k\">animated</a> fun physics simulations, and done more pracical stuff like design PID systems with bode/nyquist plots and test them with simulink."},
-            {"title":"Signal Processing", "text":"I've processed <a href=\https://www.youtube.com/watch?v=eyxP5UhLbM8\">audio</a> with Fourier analysis algorithms and worked with <a href=\"https://www.youtube.com/watch?v=NIxpzcMw3LA\">real world data collection</a>."}
+            {"title":"Simulation", "text":"I've built and <a href=\"https://www.youtube.com/watch?v=WoiuuW4Uc2k\">animated</a> fun physics simulations, and done more pracical stuff like design PID systems with bode/nyquist plots and test them with simulink."},
+            {"title":"Signal Processing", "text":"I've processed <a href=\"https://www.youtube.com/watch?v=eyxP5UhLbM8\">audio</a> with Fourier analysis algorithms and worked with <a href=\"https://www.youtube.com/watch?v=NIxpzcMw3LA\">real world data collection</a>."}
         ]},
         {"category":"Engineering", "details":[
             {"title":"Design", "text":"I've used CAD software for mechanical design (Solidworks, NX) and electrical design (KiCad), plus Anysis for FEA."},
@@ -78,7 +78,7 @@
             {"title":"Manufacturing", "text":"Farmiliar with GD&T drafting, metal/plastic 3D printing, THT/SMD soldering, and 2 axis mills/lathes."}
         ]},
         {"category":"Other", "details":[
-            {"title":"For fun", "text":"playing drums"}
+            {"title":"For fun", "text":"playing drums 🥁🥁🥁"}
         ]}
     ]
 }
