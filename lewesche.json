@@ -1,5 +1,13 @@
 {
     "contact":{
         "name":"Leif Wesche",
-        "email":"Lewesche@gmail.com"}
+        "email":"Lewesche@gmail.com"},
+    "summary":[
+        "paragraph 1",
+        "paragraph 2"
+    ],  
+    "education":[
+        {"school":"University of Southern California", "location":"Los Angeles, CA", "graduation":"Graduating Winter 2021", "degree":"MS in Computer Science", "gpa":"4.00"},
+        {"school":"University of Washington", "location":"Seattle, WA", "graduation":"Graduated Summer 2018", "degree":"BS in Aerospace Engineering", "gpa":"3.75"}
+    ]	
 }
