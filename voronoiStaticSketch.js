@@ -101,7 +101,7 @@ $(document).ready(function() {
     	console.log(json);
 		buildPage(json);
 	});
-}
+});
 
 function buildPage(resume) {
 	buildContact(resume.contact);	
