@@ -95,14 +95,14 @@ let resumeOld = {
 }
  
 
-$(document).ready(function() {	
+function setup() {	
 	console.log("requesting json");
 	$.getJSON("lewesche.json", function(json) {
 		console.log("returned!");
     	console.log(json);
 		buildPage(json);
 	});
-});
+}
 
 function buildPage(resume) {
 	buildContact(resume.contact);	
