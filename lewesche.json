@@ -35,7 +35,7 @@
     ],
     "projects":[
         {"title":"Weenix", "summary":"Operating Systems class project", "details":[
-            {"text":"Worked with two peers on a semester long project building out a single threaded Unix 6th edition based kernel. Not from scratch, but we did implement signifigant components."},
+            {"text":"Worked with two peers on a semester long project building out a single threaded Unix 6th edition based kernel running in QEMU. Not from scratch, but we did implement signifigant components."},
             {"text":"The project was broken into three sub projects where we implemented processes and thread control, a virtual file system abstraction layer, and finaly a virtual memory system. Started by initializing the idle process all the way to running compiled user code."},
             {"text":"We implemented process and thread data structures, a FIFO scheduler, kernel level mutex, virtual file system, Unix system calls, shadow objects and an on-demand paged virtual memory!"},
             {"text":"I got lot more of experience writing C, bug hunting with GDB/valgrind, and learned a bit of assembly too."}
