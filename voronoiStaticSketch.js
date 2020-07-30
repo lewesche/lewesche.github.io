@@ -25,6 +25,7 @@ function buildPage(resume) {
 	inner.classList.add("tight");
 	inner.classList.add("blur");
 	inner.append(buildEducation(resume.education));
+	inner.append(buildAbout(resume.about));
 	inner.append(buildExperience(resume.experience));
 	inner.append(buildProjects(resume.projects));
 	inner.append(buildSkills(resume.skills));
@@ -142,6 +143,24 @@ function buildEducation(e) {
 		sub.innerHTML = e[i].gpa + " gpa, " + e[i].graduation;
 		inner.append(main);
 		inner.append(sub);
+	}
+	outer.append(inner);
+	return outer;
+}
+
+function buildAbout(a) {
+	let outer = document.createElement("div");
+	let inner = document.createElement("div");
+	let title = document.createElement("h2");
+	title.innerHTML = "- About";
+	title.classList.add("left" , "dropDown");
+	outer.append(title);
+	for(let i=0; i<a.length; i++) {
+		if(i!=0) { inner.append(document.createElement("br")); }
+		let main = document.createElement("p");
+		main.innerHTML = a[i];
+		main.classList.add("indent");
+		inner.append(main);
 	}
 	outer.append(inner);
 	return outer;
