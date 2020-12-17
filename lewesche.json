@@ -57,7 +57,7 @@
         ]},
 
 
-	{"title":""Data science class projects", "lang":"Python with lots of sklearn/pandas" ,"details":[
+	{"title":"Data science class projects", "lang":"Python with lots of sklearn/pandas" ,"details":[
 	    {"text":"Applied cool data science concepts like cross validation, bootstrap, monte carlo simulation, regularization, SMOTE, active learning and self training."},
 	    {"text":"Worked with KNN, linear/logistic regression, bayesian discriminant analysis, lasso/ridge regression, PCR, SVM/SVCs, random forests, and K-means clustering."},
 	    {"text":"Practiced working with diverse datasets and goals, ie time series data, imbalanced data, multi-class and multi-label problems."}
