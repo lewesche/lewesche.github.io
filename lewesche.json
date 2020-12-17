@@ -7,18 +7,18 @@
         "paragraph 2"
     ],  
     "education":[
-        {"school":"University of Southern California", "location":"Los Angeles, CA", "graduation":"Graduating Winter 2021", "degree":"MS in Computer Science", "gpa":"4.00"},
+        {"school":"University of Southern California", "location":"Los Angeles, CA", "graduation":"Graduating Winter 2020", "degree":"MS in Computer Science", "gpa":"4.00"},
         {"school":"University of Washington", "location":"Seattle, WA", "graduation":"Graduated Summer 2018", "degree":"BS in Aerospace Engineering", "gpa":"3.75"}
     ],  
     "about":[
-        "I'm currently in the last semester of grad school at USC. My undergraduate degree was in mechanical engineering, but somewhere along the way I got into computer science.",
-        "I started grad school with an open mind about what I wanted to focus on. After exploring a variety of topics, I think pursuing a career in systems would be most fulfilling for me. The systems classes I've taken (one on OS and two on networking) have been my favorites. Working with systems, or low level langues in general, feels a little like pulling the curtains back. Seeing how hardware and software work together to build something greater than their parts is what keeps me interested in CS. I still have a lot to learn, and hopefully I'll be lucky enough to find a career where I can keep learning."
+        "I recently finished grad school at USC with a MS in computer science. My undergraduate degree was in aerospace engineering.",
+        "I started grad school with an open mind about what I wanted to focus on. After exploring a variety of topics, I think pursuing a career in systems would be most fulfilling for me. The classes I've taken the most away from were two OS classes and two networking classes. Working with systems, or low level langues in general, feels a little like pulling the curtains back. Seeing how hardware and software work together to build something greater than their parts is what makes me interested in CS. I still have a lot to learn, and hopefully I'll be lucky enough to find a career where I can keep learning."
     ],  
     "experience":[
-        {"company":"USC", "title":"Teaching Assistant", "date":"Fall 2019 - Present", "summary":[
+        {"company":"USC", "title":"Teaching Assistant", "date":"Fall 2019 - Winter 2020", "summary":[
             "Taught discrete math and algorithms (CSCI 107) in the fall of 2019.",
-            "Teaching data structures and object oriented design (CSCI 104) from spring 2020 onward.",
-            "Hunting C++ bugs in office hours, making content for weekly discussions, running labs, writing grading tools in C++, python, and bash."]},
+            "Taught data structures and OO design (CSCI 104) from spring 2020 onward.",
+            "Designing programing homeworks/labs, writing grading tools, making content for weekly discussions, running labs, and of course hunting C++ bugs in office hours."]},
         {"company":"SpaceX", "title":"Associate Engineer", "date":"Fall 2018 - Winter 2018", "summary":[
             "This was SpaceX's new grad program. I worked on the crew capsule actuators systems that moved the seats with the interior mechanisms team.",
             "Design and analysis of various metal flight parts related to the seat actuators using first principles, CAD, and FEA.",
@@ -34,51 +34,68 @@
             "We designed and conducted thermal and flow tests to record pressure and temp data, similar to how they might be used in a heat exchanger. We also built lattice coupons to test in torsion/tension/shear. I used a bit of python to handle the data."]}
     ],
     "projects":[
-        {"title":"Weenix", "summary":"Operating Systems class project", "details":[
-            {"text":"Worked with two peers on a semester long project building out a single threaded Unix 6th edition based kernel running in QEMU. Not from scratch, but we did implement signifigant components."},
-            {"text":"The project was broken into three sub projects where we implemented processes and thread control, a virtual file system abstraction layer, and finaly a virtual memory system. Started by initializing the idle process all the way to running compiled user code."},
-            {"text":"We implemented process and thread data structures, a FIFO scheduler, kernel level mutex, virtual file system, Unix system calls, shadow objects and an on-demand paged virtual memory!"},
-            {"text":"I got lot more of experience writing C, bug hunting with GDB/valgrind, and learned a bit of assembly too."}
+		{"title":"JOS", "summary":"Advanced Operating Systems class project", "lang":"C/assembly", "details":[
+            {"text":"JOS is a exokernel OS built for x86 arcitecture."},
+            {"text":"The project touched on the boot process and file system, but the brunt of it had to do with the virtual memory subsystem."},
+            {"text":"I thought JOS was a fun next step after Weenix because much of the project revolved specifics of x86 hardware. We got to interact with the hardware while working with page tables, supporting multiple CPU cores, preemption/context switching, handling traps/interrupts."},
+			{"text":"Some other cool features include a debugging tool to trace the stack, shell commands, a IPC system, and a unix style fork(). Our class version of JOS also included a optional extension for a networking stack, which I'm still playing with."}
         ]},
-	{"title":"Machine Learning", "summary":"Data science class projects", "details":[
+
+
+        {"title":"Advanced Networking class project", "lang":"C++/bash", "details":[
+            {"text":"Our class had access to a testbed consisting of a bunch of computers, where I simluated different topology/traffic scenarios."},
+            {"text":"Wrote a daemon that monitored network interfaces for high traffic events, including simulated DDoS attacks."},
+            {"text":"Tested the same DDoS attack with a anycast setup. Modified the daemon to react to attacks via either IP filtering at the attacked site (in the case where the attackers query name is known) or modifying BGP data to double append the AS to the path to shift traffic away."},
+			{"text":"Also tested a deploying a scrubber service on a seperate machine to handle DDoS attacks. This time the monitoring daemon modified BGP data to redirect traffic to the scrubber, which forwarded only valid queries to the server."}
+        ]},
+
+
+		{"title":"Weenix", "summary":"Operating Systems class project", "lang":"C/assembly", "details":[
+            {"text":"Worked with two pals on a semester long project building out a single threaded Unix 6th edition based kernel running in QEMU."},
+            {"text":"We implemented processes and thread control, a virtual file system abstraction layer, and finaly a virtual memory system. Started by initializing the idle process all the way to running user code."},
+            {"text":"Implemented process and thread data structures, a FIFO scheduler, kernel level mutex, virtual file system, Unix system calls, shadow objects and an on-demand paged virtual memory!"}
+        ]},
+
+
+	{"title":""Data science class projects", "lang":"Python with lots of sklearn/pandas" ,"details":[
 	    {"text":"Applied cool data science concepts like cross validation, bootstrap, monte carlo simulation, regularization, SMOTE, active learning and self training."},
 	    {"text":"Worked with KNN, linear/logistic regression, bayesian discriminant analysis, lasso/ridge regression, PCR, SVM/SVCs, random forests, and K-means clustering."},
-	    {"text":"Practiced working with diverse datasets and goals, ie time series data, imbalanced data, multi-class and multi-label problems."},
-	    {"text":"I got comfortable working with pandas, seaborn, SKlearn, and Google Colab. And python."}
+	    {"text":"Practiced working with diverse datasets and goals, ie time series data, imbalanced data, multi-class and multi-label problems."}
 	]},
-	{"title":"News App", "summary":"Web Tech class projects", "details":[
-            {"text":"Web Development Class Project. Built a live news Web App that fetched data from various APIs through a cloud hosted backend."},
-            {"text":"html/css/js, python Flask backend hosten on AWS", "links":[
-                {"text":"Link", "url":"http://homework6-env.eba-aqhnumkd.us-east-1.elasticbeanstalk.com/index.html"},
-                {"text":"Video", "url":"https://www.youtube.com/watch?v=zYx_7yxwQbg"}]},
-            {"text":"React frontend, node.js backend, GCP hosted", "links":[
-                {"text":"Link", "url":"https://argon-retina-271020.wl.r.appspot.com/"},
-                {"text":"Video", "url":"https://www.youtube.com/watch?v=adw-17RX2mw"}]},
-            {"text":"Android App (Java), node.js backend, GCP hosted", "links":[
-                {"text":"Video", "url":"https://www.youtube.com/watch?v=td6YLY7J3Xc&t=21s"}]}
-        ]},
-        {"title":"Matrix Music Visualizer", "summary":"Just for fun", "details":[
-            {"text":"I designed, built, and open sourced an Arduino driven music visualizer with parts that come in under $30. Still works too!"},
-            {"text":"An 8x8 array of individually addressed LEDs behind a black acrylic sheet form a 64 pixel “screen”."},
-            {"text":"Designed a custom PCB, 3D printed housing, and C++ software with a few different animations."},
-            {"text":"An integrated analog mic samples audio which is FFT’ed into eight frequency bins spanning audible sound. Bin data is used to animate the screen.", "links":[
-                {"text":"Video", "url":"https://www.youtube.com/watch?v=jVYRgS695s0"}]}
-        ]},
-        {"title":"Image Procesing Toolkit", "summary":"Just for fun", "details":[
-            {"text":"A gimp-ish GUI application I built with the QT framework to try implement and layer different image processing algorithms."},
-            {"text":"Implemented resizing/rotation, gaussian blurs, contrast adjustment, edge detection, and even functions to encode/decode subtle steganographic messages in images."}
-        ]}
 
+
+	{"title":"News App", "summary":"Web Tech class projects", "lang":"html/css/js/python(flask)/java", "details":[
+        {"text":"Web Development Class Project. Built a live news Web App that fetched data from various APIs through a cloud hosted backend."},
+        {"text":"html/css/js, python Flask backend hosten on AWS", "links":[
+            {"text":"Link", "url":"http://homework6-env.eba-aqhnumkd.us-east-1.elasticbeanstalk.com/index.html"},
+            {"text":"Video", "url":"https://www.youtube.com/watch?v=zYx_7yxwQbg"}]},
+        {"text":"React frontend, node.js backend, GCP hosted", "links":[
+            {"text":"Link", "url":"https://argon-retina-271020.wl.r.appspot.com/"},
+            {"text":"Video", "url":"https://www.youtube.com/watch?v=adw-17RX2mw"}]},
+        {"text":"Android App (Java), node.js backend, GCP hosted", "links":[
+            {"text":"Video", "url":"https://www.youtube.com/watch?v=td6YLY7J3Xc&t=21s"}]}
+    ]},
+
+
+    {"title":"Matrix Music Visualizer", "summary":"Just for fun", "lang":"C++", "details":[
+        {"text":"I designed, built, and open sourced an Arduino driven music visualizer with parts that come in under $30. Still works too!"},
+        {"text":"An 8x8 array of individually addressed LEDs behind a black acrylic sheet form a 64 pixel “screen”."},
+        {"text":"Designed a custom PCB, 3D printed housing, and C++ software with a few different animations."},
+        {"text":"An integrated analog mic samples audio which is FFT’ed into eight frequency bins spanning audible sound. Bin data is used to animate the screen.", "links":[
+        {"text":"Video", "url":"https://www.youtube.com/watch?v=jVYRgS695s0"}]}
+    ]}
     ],
     "skills":[
         {"category":"Programming", "details":[
-            {"title":"Languages", "text":"C, C++, Javascript, Python, Bash, Java, Rust, Matlab/Simulink."},
-            {"title":"Software Development", "text":"I've mostly worked on Linux systems and I've used git, gdb, valgrind, cmake, and GTest."},
-	    {"title":"Data Science", "text":"I've work with pandas, seaborn, sklearn, weka, and googl Colab"},
-            {"title":"Web Development", "text":"Farmiliar with html/css/md, JQuery, Bootstrap, React, node.js, flask, browser debugging, and AWS/GCP products."}
+            {"title":"Languages", "text":"I like C, C++, Javascript, Python, Bash, Java, and Matlab/Simulink."},
+            {"title":"Software Development", "text":"I've worked with git, gdb, make, cmake, valgrind, and GTest. I'm most confortable working with linux."},
+		{"title":"Operating Sytems", "text":"I'm farmiliar with OS fundementals like address translation, paging, locking, and file systems. I know a bit about computer hardware (the MMU, TLB, CPU caches, memory, disks) and particularly how the parts interact with the OS. I've also studied some less traditional types of OSes too, like exokernels and virtual machines."},
+		{"title":"Networking", "text":"I'm comfortable with the theory behind IP, transport protocols like TCP/UDP, and link layer protocols like wifi/ethernet, and BGP. I've also studied some other neat stuff like onion routing and cluster computing."},
+	    {"title":"Data Science", "text":"I've used pandas, seaborn, sklearn, weka, and google Colab."},
+        {"title":"Web Development", "text":"Farmiliar with html/css/md, JQuery, Bootstrap, React, node.js, flask, browser debugging, and AWS/GCP cloud products."}
         ]},
         {"category":"Math", "details":[
-            {"title":"Algorithms", "text":"Farmiliar with graph algorithms, principle component analysis, dynamic/linear programming methods, and using complexity analysis to design code that scales."},
+            {"title":"Algorithms", "text":"Farmiliar with graph algorithms, principle component analysis, dynamic/linear programming methods, and applying complexity analysis to design code that scales."},
 	    {"title":"Data Science", "text":"I'm comfortable with the theory behind all the ML algorithms and tools listed up in the projects section, as well as a few others like Hidden Markov Models and neural nets."},
             {"title":"Simulation", "text":"I've built and <a href=\"https://www.youtube.com/watch?v=WoiuuW4Uc2k\">animated</a> fun physics simulations, and done more pracical stuff like design PID systems with bode/nyquist plots and test them with simulink."},
             {"title":"Signal Processing", "text":"I've processed <a href=\"https://www.youtube.com/watch?v=eyxP5UhLbM8\">audio</a> with Fourier analysis algorithms and worked with <a href=\"https://www.youtube.com/watch?v=NIxpzcMw3LA\">real world data collection</a>."}

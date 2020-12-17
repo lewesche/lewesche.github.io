@@ -201,6 +201,7 @@ function buildProjects(p) {
 		let main = document.createElement("p");
 		main.innerHTML = p[i].title; 
 		if(p[i].summary) {main.innerHTML += " - " + p[i].summary }
+		if(p[i].lang) {main.innerHTML += " - " + p[i].lang }
 		inner.append(main);
 		for(let j=0; j<p[i].details.length; j++) {
 			let sub = document.createElement("p");
