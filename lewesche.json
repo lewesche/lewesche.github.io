@@ -35,25 +35,24 @@
     ],
     "projects":[
 		{"title":"JOS", "summary":"Advanced Operating Systems class project", "lang":"C/assembly", "details":[
-            {"text":"JOS is a exokernel OS built for x86 arcitecture."},
+            {"text":"JOS is a exokernel OS built for x86 architecture."},
             {"text":"The project touched on the boot process and file system, but the brunt of it had to do with the virtual memory subsystem."},
-            {"text":"I thought JOS was a fun next step after Weenix because much of the project revolved specifics of x86 hardware. We got to interact with the hardware while working with page tables, supporting multiple CPU cores, preemption/context switching, handling traps/interrupts."},
-			{"text":"Some other cool features include a debugging tool to trace the stack, shell commands, a IPC system, and a unix style fork(). Our class version of JOS also included a optional extension for a networking stack, which I'm still playing with."}
+            {"text":"I thought JOS was a fun next step after Weenix because much of the project revolved around the specifics of x86 hardware. We got to interact with the hardware while working with page tables, supporting multiple CPU cores, preemption/context switching, and handling traps/interrupts."},
+			{"text":"Some other cool features include a debugging tool to trace the stack, shell commands, a IPC system, and a unix style fork()."}
         ]},
 
 
         {"title":"Advanced Networking class project", "lang":"C++/bash", "details":[
-            {"text":"Our class had access to a testbed consisting of a bunch of computers, where I simluated different topology/traffic scenarios."},
-            {"text":"Wrote a daemon that monitored network interfaces for high traffic events, including simulated DDoS attacks."},
+            {"text":"Simluated different topology/traffic scenarios on a live testbed."},
+            {"text":"Wrote several iterations of a linux daemon that monitored network interfaces for high traffic events, including simulated DDoS attacks."},
             {"text":"Tested the same DDoS attack with a anycast setup. Modified the daemon to react to attacks via either IP filtering at the attacked site (in the case where the attackers query name is known) or modifying BGP data to double append the AS to the path to shift traffic away."},
-			{"text":"Also tested a deploying a scrubber service on a seperate machine to handle DDoS attacks. This time the monitoring daemon modified BGP data to redirect traffic to the scrubber, which forwarded only valid queries to the server."}
+			{"text":"Also tested deploying a scrubber service on a seperate machine to handle DDoS attacks. This time the monitoring daemon modified BGP data to redirect traffic to the scrubber, which forwarded only valid queries to the server."}
         ]},
 
 
 		{"title":"Weenix", "summary":"Operating Systems class project", "lang":"C/assembly", "details":[
-            {"text":"Worked with two pals on a semester long project building out a single threaded Unix 6th edition based kernel running in QEMU."},
-            {"text":"We implemented processes and thread control, a virtual file system abstraction layer, and finaly a virtual memory system. Started by initializing the idle process all the way to running user code."},
-            {"text":"Implemented process and thread data structures, a FIFO scheduler, kernel level mutex, virtual file system, Unix system calls, shadow objects and an on-demand paged virtual memory!"}
+            {"text":"Semester long project with two pals building out a single threaded Unix 6th edition based kernel running in QEMU."},
+            {"text":"Implemented process and thread data structures, a FIFO scheduler, kernel level mutex, virtual file system, Unix system calls, shadow objects and an on-demand paged virtual memory. Eventually got user code running!"}
         ]},
 
 
@@ -88,11 +87,11 @@
     "skills":[
         {"category":"Programming", "details":[
             {"title":"Languages", "text":"I like C, C++, Javascript, Python, Bash, Java, and Matlab/Simulink."},
-            {"title":"Software Development", "text":"I've worked with git, gdb, make, cmake, valgrind, and GTest. I'm most confortable working with linux."},
-		{"title":"Operating Sytems", "text":"I'm farmiliar with OS fundementals like address translation, paging, locking, and file systems. I know a bit about computer hardware (the MMU, TLB, CPU caches, memory, disks) and particularly how the parts interact with the OS. I've also studied some less traditional types of OSes too, like exokernels and virtual machines."},
+            {"title":"Software Development", "text":"I've worked with git, gdb, make, cmake, valgrind, and GTest. I'm most comfortable working with linux."},
+		{"title":"Operating Systems", "text":"I'm familiar with OS fundamentals like address translation, paging, locking, and file systems. I know a bit about computer hardware (the MMU, TLB, CPU caches, memory, disks) and particularly how the parts interact with the OS. I've also studied some less traditional types of OSes too, like exokernels and virtual machines."},
 		{"title":"Networking", "text":"I'm comfortable with the theory behind IP, transport protocols like TCP/UDP, and link layer protocols like wifi/ethernet, and BGP. I've also studied some other neat stuff like onion routing and cluster computing."},
 	    {"title":"Data Science", "text":"I've used pandas, seaborn, sklearn, weka, and google Colab."},
-        {"title":"Web Development", "text":"Farmiliar with html/css/md, JQuery, Bootstrap, React, node.js, flask, browser debugging, and AWS/GCP cloud products."}
+        {"title":"Web Development", "text":"Familiar with html/css/md, JQuery, Bootstrap, React, node.js, flask, browser debugging, and AWS/GCP cloud products."}
         ]},
         {"category":"Math", "details":[
             {"title":"Algorithms", "text":"Farmiliar with graph algorithms, principle component analysis, dynamic/linear programming methods, and applying complexity analysis to design code that scales."},
