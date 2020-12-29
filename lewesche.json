@@ -27,7 +27,7 @@
         {"company":"UW Human Ability and Engineering Lab", "title":"Undergrad Researcher", "date":"2017 - 2018", "summary":[
             "Ankle foot orthoses (AFOs) are commonly perscribed to cerebral palsy patients to assist with walking.",
             "Our goal was to build a simple deivce to quantify power loss and the efficiency of an AFO, then validate our deivce by comparing it to human data. I co-design and maufactured a test AFO and a fake-ankle type device to apply load to the AFO.",
-            "Wecorded analog test data using an arduino C++ program and processed data with Matlab to attempt to quantify losses and user end power."]},
+            "Recorded analog test data using an arduino C++ program and processed data with Matlab to attempt to quantify losses and user end power."]},
         {"company":"NASA MSFC", "title":"Intern", "date":"Summer 2017", "summary":[
             "I worked with three other interns to study additively manufactured (metal 3d printed) lattice structures. The ability to fabricate these web-like volumes is pretty new, and engineers are just begining to design parts with lattice structural/flow components.",
             "These structures are difficult to analyze with FEA. Our goal was to quantify their physical properties (mechanical, thermal, and fluid) for use in analysis.",
