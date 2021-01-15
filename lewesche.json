@@ -7,46 +7,46 @@
         "paragraph 2"
     ],  
     "education":[
-        {"school":"University of Southern California", "location":"Los Angeles, CA", "graduation":"Graduating Winter 2020", "degree":"MS in Computer Science", "gpa":"4.00"},
+        {"school":"University of Southern California", "location":"Los Angeles, CA", "graduation":"Graduated Winter 2020", "degree":"MS in Computer Science", "gpa":"4.00"},
         {"school":"University of Washington", "location":"Seattle, WA", "graduation":"Graduated Summer 2018", "degree":"BS in Aerospace Engineering", "gpa":"3.75"}
     ],  
     "about":[
         "I recently finished grad school at USC with a MS in computer science. My undergraduate degree was in aerospace engineering.",
-        "I started grad school with an open mind about what I wanted to focus on. After exploring a variety of topics, I think pursuing a career in systems would be most fulfilling for me. The classes I've taken the most away from were two OS classes and two networking classes. Working with systems, or low level langues in general, feels a little like pulling the curtains back. Seeing how hardware and software work together to build something greater than their parts is what makes me interested in CS. I still have a lot to learn, and hopefully I'll be lucky enough to find a career where I can keep learning."
+        "In graduate school I focused on systems courses. I'm also interested in graphics, audio/signal processing, machine learning, and web development. Mostly I just like learning and building things 😛"
     ],  
     "experience":[
         {"company":"USC", "title":"Teaching Assistant", "date":"Fall 2019 - Winter 2020", "summary":[
             "Taught discrete math and algorithms (CSCI 107) in the fall of 2019.",
-            "Taught data structures and OO design (CSCI 104) from spring 2020 onward.",
-            "Designing programing homeworks/labs, writing grading tools, making content for weekly discussions, running labs, and of course hunting C++ bugs in office hours."]},
+            "Taught three semesters of data structures and OO design (CSCI 104) from spring 2020 onward.",
+            "Designed programing homeworks/labs, writing grading tools, created content for weekly discussions, ran labs, and hunted C++ bugs in office hours."]},
         {"company":"SpaceX", "title":"Associate Engineer", "date":"Fall 2018 - Winter 2018", "summary":[
             "This was SpaceX's new grad program. I worked on the crew capsule actuators systems that moved the seats with the interior mechanisms team.",
-            "Design and analysis of various metal flight parts related to the seat actuators using first principles, CAD, and FEA.",
+            "Designed and analyzed metal and fabric components  using first principles, CAD, and FEA.",
             "Built test hardware for actuator vibration and thermal testing. Performed some simple modal and thermal analysis to inform these designs.",
-            "Got some experience running tests, handling transducer hardware, labview, and excell + python to process data."]},
+            "Got some experience running tests, handling transducer hardware, labview, and excel + python to process data."]},
         {"company":"UW Human Ability and Engineering Lab", "title":"Undergrad Researcher", "date":"2017 - 2018", "summary":[
-            "Ankle foot orthoses (AFOs) are commonly perscribed to cerebral palsy patients to assist with walking.",
-            "Our goal was to build a simple deivce to quantify power loss and the efficiency of an AFO, then validate our deivce by comparing it to human data. I co-design and maufactured a test AFO and a fake-ankle type device to apply load to the AFO.",
-            "Recorded analog test data using an arduino C++ program and processed data with Matlab to attempt to quantify losses and user end power."]},
+            "Ankle foot orthoses (AFOs) are commonly prescribed to cerebral palsy patients to assist with walking.",
+            "Our goal was to build a simple device to quantify power loss and the efficiency of an AFO, then validate our deivce by comparing it to human data. I co-designed and maufactured a test AFO and a fake-ankle type device to apply load to the AFO.",
+            "Recorded analog test data using an Arduino C++ program and processed data with Matlab to attempt to quantify losses and user end power."]},
         {"company":"NASA MSFC", "title":"Intern", "date":"Summer 2017", "summary":[
             "I worked with three other interns to study additively manufactured (metal 3d printed) lattice structures. The ability to fabricate these web-like volumes is pretty new, and engineers are just begining to design parts with lattice structural/flow components.",
             "These structures are difficult to analyze with FEA. Our goal was to quantify their physical properties (mechanical, thermal, and fluid) for use in analysis.",
-            "We designed and conducted thermal and flow tests to record pressure and temp data, similar to how they might be used in a heat exchanger. We also built lattice coupons to test in torsion/tension/shear. I used a bit of python to handle the data."]}
+            "We designed and conducted thermal and flow tests to record pressure and temp data, similar to how they might be used in a heat exchanger. We also ran torsion/tension/shear tests on lattice structures."]}
     ],
     "projects":[
 		{"title":"JOS", "summary":"Advanced Operating Systems class project", "lang":"C/assembly", "details":[
             {"text":"JOS is a exokernel OS built for x86 architecture."},
             {"text":"The project touched on the boot process and file system, but the brunt of it had to do with the virtual memory subsystem."},
-            {"text":"I thought JOS was a fun next step after Weenix because much of the project revolved around the specifics of x86 hardware. We got to interact with the hardware while working with page tables, supporting multiple CPU cores, preemption/context switching, and handling traps/interrupts."},
-			{"text":"Some other cool features include a debugging tool to trace the stack, shell commands, a IPC system, and a unix style fork()."}
+            {"text":"I thought JOS was a fun next step after Weenix because much of the project revolved around the specifics of x86 hardware. We got to interact with the hardware while working with page tables, supporting multiple CPUs, preemption/context switching, and handling traps/interrupts."},
+			{"text":"Some other cool features include a debugging tool to trace the stack, shell commands, a IPC system, and a unix style fork() in user space."}
         ]},
 
 
         {"title":"Advanced Networking class project", "lang":"C++/bash", "details":[
-            {"text":"Simluated different topology/traffic scenarios on a live testbed."},
+            {"text":"Simulated different topology/traffic scenarios on a live testbed."},
             {"text":"Wrote several iterations of a linux daemon that monitored network interfaces for high traffic events, including simulated DDoS attacks."},
             {"text":"Tested the same DDoS attack with a anycast setup. Modified the daemon to react to attacks via either IP filtering at the attacked site (in the case where the attackers query name is known) or modifying BGP data to double append the AS to the path to shift traffic away."},
-			{"text":"Also tested deploying a scrubber service on a seperate machine to handle DDoS attacks. This time the monitoring daemon modified BGP data to redirect traffic to the scrubber, which forwarded only valid queries to the server."}
+			{"text":"Also tested deploying a scrubber service on a separate machine to handle DDoS attacks. This time the monitoring daemon modified BGP data to redirect traffic to the scrubber, which forwarded only valid queries to the server."}
         ]},
 
 
@@ -76,6 +76,13 @@
     ]},
 
 
+	{"title":"Secrets", "summary":"Just for fun", "lang":"C++", "details":[
+		{"text":"Had a hard time finding something lightweight to keep track of passwords, so I made one."},
+        {"text":"Encrypts/decrypts text with whatever key you provide via a Caesar Cipher-ish algorithm. No keys or “master passwords“ are stored. Runs on the command line.", "links":[
+		{"text":"github", "url":"https://github.com/lewesche/secrets"}]}
+    ]},
+
+
     {"title":"Matrix Music Visualizer", "summary":"Just for fun", "lang":"C++", "details":[
         {"text":"I designed, built, and open sourced an Arduino driven music visualizer with parts that come in under $30. Still works too!"},
         {"text":"An 8x8 array of individually addressed LEDs behind a black acrylic sheet form a 64 pixel “screen”."},
@@ -83,13 +90,6 @@
         {"text":"An integrated analog mic samples audio which is FFT’ed into eight frequency bins spanning audible sound. Bin data is used to animate the screen.", "links":[
         {"text":"Video", "url":"https://www.youtube.com/watch?v=jVYRgS695s0"},
 		{"text":"github", "url":"https://github.com/lewesche/LED-Matrix"}]}
-    ]},
-
-
-	{"title":"Secrets", "summary":"Just for fun", "lang":"C++", "details":[
-		{"text":"Had a hard time finding something lightweight to keep track of passwords, so I made one."},
-        {"text":"Encrypts/decrypts text with whatever key you provide via a Caesar Cipher-ish algorithm. No keys or “master passwords“ are stored. Runs on the command line.", "links":[
-		{"text":"github", "url":"https://github.com/lewesche/secrets"}]}
     ]}
 
 
@@ -106,13 +106,13 @@
         {"category":"Math", "details":[
             {"title":"Algorithms", "text":"Farmiliar with graph algorithms, principle component analysis, dynamic/linear programming methods, and applying complexity analysis to design code that scales."},
 	    {"title":"Data Science", "text":"I'm comfortable with the theory behind all the ML algorithms and tools listed up in the projects section, as well as a few others like Hidden Markov Models and neural nets."},
-            {"title":"Simulation", "text":"I've built and <a href=\"https://www.youtube.com/watch?v=WoiuuW4Uc2k\">animated</a> fun physics simulations, and done more pracical stuff like design PID systems with bode/nyquist plots and test them with simulink."},
+            {"title":"Simulation", "text":"I've built and <a href=\"https://www.youtube.com/watch?v=WoiuuW4Uc2k\">animated</a> fun physics simulations, and done more practical stuff like design PID systems with bode/nyquist plots and test them with simulink."},
             {"title":"Signal Processing", "text":"I've processed <a href=\"https://www.youtube.com/watch?v=eyxP5UhLbM8\">audio</a> with Fourier analysis algorithms and worked with <a href=\"https://www.youtube.com/watch?v=NIxpzcMw3LA\">real world data collection</a>."}
         ]},
         {"category":"Engineering", "details":[
             {"title":"Design", "text":"I've used CAD software for mechanical design (Solidworks, NX) and electrical design (KiCad), plus Anysis for FEA."},
             {"title":"Mechatronics", "text":"I've incorporated microcontrollers/RPis, LiPos power systems, brushed/brushless motors, RC receiver/transmitters, and other hardware into <a href=\"https://github.com/lewesche/RC_Car\">projects</a>."},
-            {"title":"Manufacturing", "text":"Farmiliar with GD&T drafting, metal/plastic 3D printing, THT/SMD soldering, and 2 axis mills/lathes."}
+            {"title":"Manufacturing", "text":"Familiar with GD&T drafting, metal/plastic 3D printing, THT/SMD soldering, and 2 axis mills/lathes."}
         ]},
         {"category":"Other", "details":[
             {"title":"For fun", "text":"playing drums 🥁🥁🥁"}
