@@ -81,8 +81,18 @@
         {"text":"An 8x8 array of individually addressed LEDs behind a black acrylic sheet form a 64 pixel “screen”."},
         {"text":"Designed a custom PCB, 3D printed housing, and C++ software with a few different animations."},
         {"text":"An integrated analog mic samples audio which is FFT’ed into eight frequency bins spanning audible sound. Bin data is used to animate the screen.", "links":[
-        {"text":"Video", "url":"https://www.youtube.com/watch?v=jVYRgS695s0"}]}
+        {"text":"Video", "url":"https://www.youtube.com/watch?v=jVYRgS695s0"},
+		{"text":"github", "url":"https://github.com/lewesche/LED-Matrix"}]}
+    ]},
+
+
+	{"title":"Secrets", "summary":"Just for fun", "lang":"C++", "details":[
+		{"text":"Had a hard time finding something lightweight to keep track of passwords, so I made one."},
+        {"text":"Encrypts/decrypts text with whatever key you provide via a Caesar Cipher-ish algorithm. No keys or “master passwords“ are stored. Runs on the command line.", "links":[
+		{"text":"github", "url":"https://github.com/lewesche/secrets"}]}
     ]}
+
+
     ],
     "skills":[
         {"category":"Programming", "details":[
