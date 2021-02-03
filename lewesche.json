@@ -77,8 +77,8 @@
 
 
 	{"title":"Secrets", "summary":"Just for fun", "lang":"C++", "details":[
-		{"text":"Had a hard time finding something lightweight to keep track of passwords, so I made one."},
-        {"text":"Encrypts/decrypts text with whatever key you provide via a Caesar Cipher-ish algorithm. No keys or “master passwords“ are stored. Runs on the command line.", "links":[
+		{"text":"A lightweight CLI tool to keep track of passwords, so I made one."},
+        {"text":"Encrypts/decrypts text with whatever key you provide via a Caesar Cipher-ish algorithm. No keys or “master passwords“ are stored. Uses POSIX threads to handle many encryption/decryption routines in parallel.", "links":[
 		{"text":"github", "url":"https://github.com/lewesche/secrets"}]}
     ]},
 
