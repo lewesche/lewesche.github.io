@@ -39,7 +39,7 @@ function send_query(action) {
 	console.log("tag: " + tag);
 	console.log("dec: " + dec);
 	
-	let url = "lewesche.com/usr/" + usr + "?" + action; 
+	let url = "lewesche.com/secrets/usr/" + usr + "?" + action; 
 
 	if(action=="w") {
 		if(dec){
