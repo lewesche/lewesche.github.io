@@ -39,7 +39,7 @@ function send_query(action) {
 	console.log("tag: " + tag);
 	console.log("dec: " + dec);
 	
-	let url = "http://ec2-3-22-175-149.us-east-2.compute.amazonaws.com:8000/usr/" + usr + "?" + action; 
+	let url = "http://ec2-3-22-175-149.us-east-2.compute.amazonaws.com:2001/usr/" + usr + "?" + action; 
 
 	if(action=="w") {
 		if(dec){
