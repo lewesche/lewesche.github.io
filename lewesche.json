@@ -12,7 +12,7 @@
     ],  
     "about":[
         "I recently finished grad school at USC with a MS in computer science. My undergraduate degree was in aerospace engineering.",
-        "In graduate school I focused on systems courses. I'm also interested in graphics, audio/signal processing, machine learning, and web development. Mostly I just like learning and building things 😛"
+        "In graduate school I focused on systems courses. I'm also interested in web development, graphics, audio/signal processing, machine learning. I like to keep learning and build things 😛"
     ],  
     "experience":[
         {"company":"USC", "title":"Teaching Assistant", "date":"Fall 2019 - Winter 2020", "summary":[
@@ -34,6 +34,15 @@
             "We designed and conducted thermal and flow tests to record pressure and temp data, similar to how they might be used in a heat exchanger. We also ran torsion/tension/shear tests on lattice structures."]}
     ],
     "projects":[
+	{"title":"Secrets", "summary":"Just for fun", "lang":"C++, Rust, and Javascript", "details":[
+	{"text":"I wanted an easy lightweight way to store passwords. I had an idea for a tool for storing, managing, and reading encrypted data without saving any master password."},
+        {"text":"The CLI tool written in C++ encrypts/decrypts text with whatever key you provide via a Caesar Cipher-ish algorithm. No keys or “master passwords“ are stored - just returns the decrypted text, even if its gibberish. Uses POSIX threads to handle many encryption/decryption routines in parallel.", "links":[
+		{"text":"github", "url":"https://github.com/lewesche/secrets"}]},
+	{"text":"Next I brought it to the web. I built a backend that works with the CLI interface, written in Rust with the Rocket.rs web framework. I put the backend in a docker container, set up NGINX as a HTTPS reverse proxy, and built a Javascript front end.", "links":[
+		{"text":"secrets", "url":"https://lewesche.com/secrets.html"}, 
+		{"text":"github", "url":"https://github.com/lewesche/secrets_backend"}]}
+    ]},
+
 		{"title":"JOS", "summary":"Advanced Operating Systems class project", "lang":"C/assembly", "details":[
             {"text":"JOS is a exokernel OS built for x86 architecture."},
             {"text":"The project touched on the boot process and file system, but the brunt of it had to do with the virtual memory subsystem."},
@@ -73,13 +82,6 @@
             {"text":"Video", "url":"https://www.youtube.com/watch?v=adw-17RX2mw"}]},
         {"text":"Android App (Java), node.js backend, GCP hosted", "links":[
             {"text":"Video", "url":"https://www.youtube.com/watch?v=td6YLY7J3Xc&t=21s"}]}
-    ]},
-
-
-	{"title":"Secrets", "summary":"Just for fun", "lang":"C++", "details":[
-		{"text":"A lightweight CLI tool to keep track of passwords, so I made one."},
-        {"text":"Encrypts/decrypts text with whatever key you provide via a Caesar Cipher-ish algorithm. No keys or “master passwords“ are stored. Uses POSIX threads to handle many encryption/decryption routines in parallel.", "links":[
-		{"text":"github", "url":"https://github.com/lewesche/secrets"}]}
     ]},
 
 
