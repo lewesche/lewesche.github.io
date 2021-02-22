@@ -36,11 +36,10 @@
     "projects":[
 	{"title":"Secrets", "summary":"Just for fun", "lang":"C++, Rust, and Javascript", "details":[
 	{"text":"I wanted an easy lightweight way to store passwords. I had an idea for a tool for storing, managing, and reading encrypted data without saving any master password."},
-        {"text":"The CLI tool written in C++ encrypts/decrypts text with whatever key you provide via a Caesar Cipher-ish algorithm. No keys or “master passwords“ are stored - just returns the decrypted text, even if its gibberish. Uses POSIX threads to handle many encryption/decryption routines in parallel.", "links":[
-		{"text":"github", "url":"https://github.com/lewesche/secrets"}]},
+        {"text":"The CLI tool written in C++ encrypts/decrypts text with whatever key you provide via a Caesar Cipher-ish algorithm. No keys or “master passwords“ are stored - just returns the decrypted text, even if its gibberish. Uses POSIX threads to handle many encryption/decryption routines in parallel."},
 	{"text":"Next I brought it to the web. I built a backend that works with the CLI interface, written in Rust with the Rocket.rs web framework. I put the backend in a docker container, set up NGINX as a HTTPS reverse proxy, and built a Javascript front end.", "links":[
 		{"text":"secrets", "url":"https://lewesche.com/secrets.html"}, 
-		{"text":"github", "url":"https://github.com/lewesche/secrets_backend"}]}
+		{"text":"github", "url":"https://github.com/lewesche/secrets"}]}
     ]},
 
 		{"title":"JOS", "summary":"Advanced Operating Systems class project", "lang":"C/assembly", "details":[
