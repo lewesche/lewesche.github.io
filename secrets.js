@@ -1,21 +1,37 @@
-function clicked_read() {
-	console.log("read");
 
-}
+function clicked_new_user() {
+	clear();
+	usr = document.getElementById('usr_txt').value;
+	pwd = document.getElementById('pwd_txt').value;
 
-function clicked_write() {
-	console.log("write");
+	let url = "/secrets/new?name=" + usr + "&pwd=" + pwd; 
 
-}
+	let xhr = new XMLHttpRequest();
+	xhr.open("GET", url, true);
+	xhr.onload = function (e) {
+  		if (xhr.readyState === 4) {
+    		if (xhr.status === 200) {
+			let obj = JSON.parse(xhr.responseText);
+			console.log(xhr.responseText);
+			if(obj.success == "true") {
+				setNotify("New user " + usr + " created")
+			} else {
+				setError(obj);
+			}
 
-function clicked_delete() {
-	console.log("delete");
-
+    		} else {
+      			console.error(xhr.statusText);
+    		}
+  		}
+	};
+	xhr.onerror = function (e) {
+  		console.error(xhr.statusText);
+	};
+	xhr.send(null); 
 }
 
 function clicked_go() {
-	console.log("go");
-	
+	clear();
 	let radios = document.getElementsByName('action_button');
 	for(let i=0; i<radios.length; i++) {
 		if(radios[i].checked) {
@@ -31,14 +47,8 @@ function send_query(action) {
 	tag = document.getElementById('tag_txt').value;
 	usr = document.getElementById('usr_txt').value;
 	dec = document.getElementById('dec_txt').value;
+	pwd = document.getElementById('pwd_txt').value;
 
-	console.log("in send_query()");
-	console.log("usr: " + usr);
-	console.log("key: " + key);
-	console.log("idx: " + idx);
-	console.log("tag: " + tag);
-	console.log("dec: " + dec);
-	
 	let url = "/secrets/usr/" + usr + "?" + action; 
 
 	if(action=="w") {
@@ -47,6 +57,10 @@ function send_query(action) {
 		} else {
 			return;
 		}
+	}
+
+	if(pwd != "") {
+		url += "&pwd=" + pwd;
 	}
 
 	if(action=="r" || action=="w") 
@@ -72,8 +86,14 @@ function request(url) {
     		if (xhr.status === 200) {
 				try {
 					let obj = JSON.parse(xhr.responseText);
-					buildTable(obj);
-				} catch(e) {
+					console.log(xhr.responseText);
+					if(!obj.hasOwnProperty("e")) {
+						setTable(obj);
+					} else {
+						setError(obj);
+					}
+
+				} catch(e) { // valid delete and write responses return invalid json - prompting a recursive read
 					send_query("r");
 				}
     		} else {
@@ -87,8 +107,20 @@ function request(url) {
 	xhr.send(null); 
 }
 
+function setNotify(str) {
+	ele = document.getElementById("notify");
+	ele.style.display = "block";
+	ele.innerHTML = str;
+}
 
-function buildTable(obj) {
+function setError(obj) {
+	ele = document.getElementById("error");
+	ele.style.display = "block";
+	ele.innerHTML = obj.e;
+}
+
+function setTable(obj) {
+	console.log("in set table");
 	html_txt = "<table>";
 	html_txt += "<tr>" + "<th>idx</th>" + "<th>tag</th>" + "<th>text</th>" + "</tr>";
 	for(i=0; i<obj.length; i++) {
@@ -107,8 +139,27 @@ function buildTable(obj) {
 	document.getElementById("table_div").innerHTML = html_txt;
 }
 
+function clear() {
+	clearError();
+	clearTable();
+	clearNotify();
+}
+
+function clearNotify() {
+	document.getElementById("notify").style.display = "none";
+}
+
+function clearError() {
+	document.getElementById("error").style.display = "none";
+}
+
+
+function clearTable() {
+	document.getElementById("table_div").innerHTML = "";
+}
+
 function clear_fields() {
-	document.getElementById('key_txt').value = "";
+	//document.getElementById('key_txt').value = "";
 	document.getElementById('idx_txt').value = "";
 	document.getElementById('tag_txt').value = "";
 	document.getElementById('dec_txt').value = "";
